@@ -7,11 +7,11 @@ use Illuminate\Http\Request;
 
 class ListingsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         return view('listings.index', [
             'heading' => 'Latest Listings',
-            'listings' => Listing::all()
+            'listings' => Listing::latest()->filter($request)->get()
         ]);
     }
 
