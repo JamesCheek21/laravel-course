@@ -19,4 +19,8 @@ use PhpParser\Node\Expr\List_;
 
 Route::get('/', [ListingsController::class, 'index']);
 
+Route::get('/listings/create', [ListingsController::class, 'create']);
+
+Route::post('/listings', [ListingsController::class, 'store']);
+
 Route::get('/listings/{listing}', [ListingsController::class, 'show']);
