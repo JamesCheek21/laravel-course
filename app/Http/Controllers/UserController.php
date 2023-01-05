@@ -29,10 +29,12 @@ class UserController extends Controller
 
         return redirect('/')->with('message', 'User created and logged in');
     }
+
     public function login()
     {
         return view('users.login');
     }
+
     public function logout(Request $request)
     {
         auth()->logout();

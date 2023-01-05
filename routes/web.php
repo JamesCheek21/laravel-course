@@ -22,6 +22,7 @@ Route::get('/', [ListingsController::class, 'index']);
 
 //Listings
 Route::get('/listings/create', [ListingsController::class, 'create'])->middleware('auth');
+Route::get('/listings/manage', [ListingsController::class, 'manage'])->middleware('auth');
 Route::post('/listings', [ListingsController::class, 'store'])->middleware('auth');
 Route::get('/listings/{listing}/edit', [ListingsController::class, 'edit'])->middleware('auth');
 Route::put('/listings/{listing}', [ListingsController::class, 'update'])->middleware('auth');
