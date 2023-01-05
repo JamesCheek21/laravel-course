@@ -11,6 +11,11 @@ class Listing extends Model
 
     protected $fillable = ['title', 'logo', 'company', 'location', 'website', 'email', 'description', 'tags'];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
     public function scopeFilter($query, $filters)
     {
         if ($filters->tag ?? false) {
